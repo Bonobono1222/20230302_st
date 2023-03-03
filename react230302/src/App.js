@@ -13,9 +13,16 @@ function App() {
   // [초기값 변수, 값을 변경해주는 함수]
   // useState(0) 리엑트에서 변수처럼 자료를 보관할 수 있는 State문법
   // [](대괄호) Array자료형식-> 한곳에다가 여러가지 자료를 저장하고 싶을 때 사용
-  
+  let [bgColor, setbgColor] = useState('white');
+  let changeBg = () => {
+    let newBg = bgColor == 'white' ? 'skyblue' : 'white';
+    setbgColor(newBg)
+  }
+
+
+
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor:bgColor}}>
       <h1 style={{color:"skyblue"}}>Hello, {user}!</h1>
       <p>This is a React App</p>
 
@@ -75,12 +82,20 @@ function App() {
           setTitle(copy);
           }}>글 제목 변경</button>
 
-         <button onClick={() => { 
+         <button onClick={() => {
+          // 버튼을 틀릭했을 때
           let Copy = [...title];
           Copy = Copy.sort();
           // sort() -> 오름차순 정렬
           setTitle(Copy);
           }}>글 정렬</button>
+
+          <button onClick={() => {
+            //setbgColor(bgcolor === "" ? "skyblue" : "");
+            //setbgColor의 bgcolor 색이 없는게 맞으면 skyblue색을 넣어주고 색이 들어가 있으면 없애라.
+            changeBg()
+          }}>배경색 변경</button>
+
     </div>
   );
 }
