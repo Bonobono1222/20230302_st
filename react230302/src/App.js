@@ -35,17 +35,33 @@ function App() {
     setCount(count + 1)
     console.log("num", num, "state", count);
   }
+  let num1 = [1,2,3,4];
+  let name1  = ['KimJihye','KimSoojin','KimHajin','KimHun'];
 
   // console.log 두 개 찍히는 이유는?
   // App.js에 작성한 내용은 index.js를 거쳐서 'root'라는 아이디 값이 div에 그려진다.
   // StrictMode => 리액트로 개발할 때, 잠재적인 문제가 있는지 검사해주는 모드(스스로 문제점을 찾아주는건 아니다)
   // index.js => index.html파일과 App.js파일을 연결 해주는 역활
+  
   return (
     <div className='App'>
-     <Box num="1" name="KimJihye"></Box>
-     <Box num="2" name="KimSojin"></Box>
-     <Box num="3" name="KimYojin"></Box>
-     <Box num="4" name="KimHun"></Box>
+     {/*<Box num="1" name="KimJihye"></Box>
+     <Box num="2" name="KimSoojin"></Box>
+     <Box num="3" name="KimHajin"></Box>
+    <Box num="4" name="KimHun"></Box>*/}
+    {
+      name1.map(function(a, i) {
+        //변수.map(콜백함수(매개변수1,매개변수2) { return작성 })
+        // 첫번째 매개변수는 값들을 가져오고, 두번째 매개변수는 0부터 증가하는 정수
+        return (
+          <div className='box' key={i}>
+            <h1 className='blue'>Box Component</h1>
+            <h2>Box{num1[i]}</h2>
+            <h3>{name1[i]}</h3>
+          </div>
+        )
+      })
+    }
     </div>
   )
 }

@@ -10,6 +10,7 @@ import '../component/Box.css'
 // 컴포넌트를 나누는 절대적인 기준은 없다(본인만의 기준을 만들어 사용하는게 좋음)
 
 const Box = (props) => {
+  // props => 임의의 입력을 받은 후, 화면에 어떻게 표시되는지를 기술하는 React 엘리먼트를 반환
   return (
     <div className='box'>
       <h1 className='blue'>Box Component</h1>
