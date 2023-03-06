@@ -1,5 +1,6 @@
 import React from "react";
 import {useState} from 'react'
+import '../component/State.css'
 
 // 컴포넌트를 만들 때는 반드시 제일 앞 글자가 대문자여야 한다.
 function State() {

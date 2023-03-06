@@ -82,7 +82,7 @@ let num3 = 4
 result4 = num1 > num2 ? "num2 > num3" : num2 > num3 ? "num2 > num3" : '숫자가 같거나 num3이 가장 크다'
 console.log(result4)
 
-//5.
+// 5.
 // 삼항 연산자 논리 계산(true, false)
 // person이 있다면 person.name / 없다면 '이름이 없다'
 console.log(person.name ? "이름" +  person.name : "이름이 없다")
