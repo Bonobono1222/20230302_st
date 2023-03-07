@@ -5,8 +5,10 @@ import logo from './logo.svg';
 import {useState} from 'react'
 import State from './component/State';
 import Box from './component/Box';
+import Comment from './component/Comment';
 import '../src/component/State.css';
 import '../src/component/Box.css';
+import '../src/component/Comment.css'
 
 // State라는거에 반응하기 때문에 react이다.
 // 리액트는 변수 값이 업데이트 됐다고 UI를 재렌더링 하지 않는다.
@@ -43,6 +45,9 @@ function App() {
   // StrictMode => 리액트로 개발할 때, 잠재적인 문제가 있는지 검사해주는 모드(스스로 문제점을 찾아주는건 아니다)
   // index.js => index.html파일과 App.js파일을 연결 해주는 역활
   
+  let title1 = ['김라라','박미미','이수수','햄찌순'];
+  let comment1 = ['안녕하세요~ 오늘 출석합니다.','출첵출첵','출석합니다~ 오늘은 날씨가 괜찮네요~','안녕하세요~ 해피햄찌데이~!']
+
   return (
     <div className='App'>
      {/*<Box num="1" name="KimJihye"></Box>
@@ -50,15 +55,33 @@ function App() {
      <Box num="3" name="KimHajin"></Box>
     <Box num="4" name="KimHun"></Box>*/}
     {
-      name1.map(function(a, i) {
-        //변수.map(콜백함수(매개변수1,매개변수2) { return작성 })
-        // 첫번째 매개변수는 값들을 가져오고, 두번째 매개변수는 0부터 증가하는 정수
+      // name1.map(function(a, i) {
+      //   //변수.map(콜백함수(매개변수1,매개변수2) { return작성 })
+      //   // 첫번째 매개변수는 값들을 가져오고, 두번째 매개변수는 0부터 증가하는 정수
+      //   return (
+      //     <div className='box' key={i}>
+      //       <h1 className='blue'>Box Component</h1>
+      //       <h2>Box{num1[i]}</h2>
+      //       <h3>{name1[i]}</h3>
+      //     </div>
+      //   )
+      // })
+      // <Comment title="김라라" comment="안녕하세요~ 오늘 출석합니다."></Comment>
+      // <Comment title="박미미" comment="출첵출첵"></Comment>
+      // <Comment title="이수수" comment="출석합니다~ 오늘은 날씨가 괜찮네요~"></Comment>
+      // <Comment title="햄찌순" comment="안녕하세요~ 해피햄찌데이~!"></Comment>
+      title1.map(function(a, i) {
         return (
-          <div className='box' key={i}>
-            <h1 className='blue'>Box Component</h1>
-            <h2>Box{num1[i]}</h2>
-            <h3>{name1[i]}</h3>
-          </div>
+          // <div className='sm-box'>
+          //   <div className='sm-box-item'>
+          //   </div>
+          //   <div className='sm-box-item2' key={i}>
+          //     <h1>{title1[i]}</h1>
+          //     <span>{comment1[i]}</span>
+          //   </div>
+          // </div>
+          <Comment title = {title1[i]}
+            comment = {comment1[i]} />
         )
       })
     }

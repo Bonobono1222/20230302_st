@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sm-box {
+  width: 800px;
+  height: 130px;
+  display: flex;
+  border: 1px solid #3e3e3e;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.sm-box-item {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url(https://cdn.pixabay.com/photo/2021/11/19/03/39/child-6807976_960_720.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.sm-box-item2 {
+  display: flex;
+  flex-direction: column;
+  transition: all 4000ms;
+}
+
+.sm-box-item2 h1 {
+  font-weight: bold;
+}
+
+.sm-box-item2 span {
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.sm-box-item2 h1:hover {
+  color: rgb(117, 188, 190);
+  cursor: pointer;
+}
