@@ -8,7 +8,7 @@ import Box from "./component/Box";
 import Comment from "./component/Comment";
 import "../src/component/State.css";
 import "../src/component/Box.css";
-import "../src/component/Comment.css";
+// import "../src/component/Comment.css";
 import CommentList from "./component/CommentList";
 
 // State라는거에 반응하기 때문에 react이다.

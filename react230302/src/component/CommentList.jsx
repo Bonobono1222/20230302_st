@@ -27,7 +27,7 @@ function CommentList() {
       {comments.map((comment, i) => {
         // comments 배열을 map()가 돌면서
         return (
-          <Comment name={comment.name} comment={comment.comment} key={i} />
+          <Comment name={comment.name} comment={comment.comment} key={i}/>
         );
       })}
     </div>
