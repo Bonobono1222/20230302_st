@@ -4,19 +4,26 @@
   box-sizing: border-box;
 }
 
-.sm-box {
+.wrapper {
   width: 800px;
-  height: 130px;
+  height: 70px;
   display: flex;
-  border: 1px solid #3e3e3e;
+  border: 1px solid #ccc;
   border-radius: 15px;
-  margin: 20px;
-  padding: 10px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.wrapper:hover {
+  border-color: #9cebe0;
 }
 
 .sm-box-item {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background-image: url(https://cdn.pixabay.com/photo/2021/11/19/03/39/child-6807976_960_720.png);
   background-repeat: no-repeat;
@@ -28,19 +35,27 @@
 .sm-box-item2 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  /*아래로 떨어지게 정렬*/
   transition: all 4000ms;
 }
 
-.sm-box-item2 h1 {
-  font-weight: bold;
-}
-
 .sm-box-item2 span {
-  font-size: 20px;
   padding-left: 10px;
 }
 
-.sm-box-item2 h1:hover {
-  color: rgb(117, 188, 190);
+.sm-box-item2 .name-text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.sm-box-item2 .comment-text {
+  font-size: 15px;
+}
+
+
+
+.sm-box-item2 .name-text:hover {
+  color: rgb(72, 180, 184);
   cursor: pointer;
 }
