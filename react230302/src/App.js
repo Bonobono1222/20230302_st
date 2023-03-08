@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="App">
-      <CommentList />
+      
       {/*<Box num="1" name="KimJihye"></Box>
      <Box num="2" name="KimSoojin"></Box>
      <Box num="3" name="KimHajin"></Box>
@@ -90,6 +90,8 @@ function App() {
         //       comment = {comment1[i]} />
         //   )
         // })
+        <CommentList />
+        
       }
     </div>
   );
