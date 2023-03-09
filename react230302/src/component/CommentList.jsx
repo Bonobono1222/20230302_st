@@ -1,68 +1,106 @@
-import React from "react";
-import App from "../App";
-import Comment from "./Comment";
-import { useState } from "react";
-// useState를 쓰려면 적어야 하는 구문
+import React from 'react';
+import Comment from './Comment';
+import { useState } from 'react';
 
 const comments = [
   {
-    name: "김라라",
-    comment: "안녕하세요~ 오늘 출석합니다.",
+    name : "김수수",
+    comment : "안녕하세요~ 출석합니다!"
   },
   {
-    name: "박미미",
-    comment: "출첵출첵!!",
-  },
+    name : "햄순이",
+    comment : "출석합니다! 안녕하세요~"
+  }, 
   {
-    name: "이수수",
-    comment: "출석합니다~ 오늘은 날씨가 괜찮네요~",
-  },
-  {
-    name: "햄찌순",
-    comment: "안녕하세요~ 해피햄찌데이~!",
-  },
-];
+    name : "김햄돌",
+    comment : "안녕하세요!"
+  }
+]
 
-const styles2 = {
-  addBtn: {
-    width: '100px',
-    height: '25px',
+const style2 = {
+  addDataBox: {
+    width: '650px',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: '10px',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+
+  InputStyle: {
+    height: '25px',
+    border: '1px solid #ccc',
+  },
+
+  addBtn: {
+    width: '90px',
+    height: '25px',
     backgroundColor: 'rgb(33, 136, 139)',
     color: '#fff',
     border: '1px solid #ccc',
     borderRadius: '5px',
     cursor: 'pointer'
   }
-};
+}
 
 function CommentList() {
-  const [commentList, setConmmentList] = useState(comments);
-  // 초기값 commentList에 comments의 값들을 넣어준다.
-  const deletComment = (index) => {
-    // deletComment라는 함수를 만들어주고
-    // 여기서 매개변수값 index를 사용 하기 위해 하단에 onDelete={() => deletComment(i)}를 넣어줌
-    // button에 있는 onClick={props.onDelete}과 onDelete={() => deletComment(i)}가 이어짐
-    const newCommentList = [...commentList];
-    // newCommentList라는 변수를 선언해주고 CommentList의 값들을 넣어준다.
-    newCommentList.splice(index, 1);
-    setConmmentList(newCommentList);
+
+   const [CommentList , setCommentList] = useState(comments)
+   const [name , setName] = useState('');
+   const [content , setContent] = useState('');
+   
+   const deleteComment = (index) => {
+     const newCommentList = [...CommentList];
+     newCommentList.splice(index , 1)
+     setCommentList(newCommentList)
+   }
+   const addComment = () => {
+    const add = {name : '햄찡' , comment : '다들 안녕하세요~! 아침은 드셨어요?'}
+    setCommentList([add,...CommentList])
+    // 스테이트 변경함수
   }
+
+  const addComment11 = () => {
+     const add1 = {name : name , comment : content}
+     setCommentList([add1,...CommentList])
+    // 스테이트 변경함수
+    setName('')
+    setContent('')
+    //state변경 함수에 빈문자열을 넣어서 input 에 작성된 내용을 초기화 시켜준다
+  }
+   
   return (
     <div>
-      {commentList.map((comment, i) => {
-        // comments 배열을 map()가 돌면서<comment라는 매개변수1에 comments값들이 담김, i는 매개변수 2 정수>
-        // (03.08)폼을 삭제하기 위하여 comments를 commentList로 바꿔줌
-        return (
-          <Comment name={comment.name} comment={comment.comment} key={i} onDelete={() => deletComment(i)}/>
-        );
-      })}
-      <button style={styles2.addBtn}>Comment +</button>
+      {
+        CommentList.map((comment, i)=>{
+          return (
+            <div>
+               <Comment name={comment.name} comment={comment.comment} key={i} onDelete={()=>deleteComment(i)}> 
+               </Comment>
+            </div>
+          )
+        })
+      }
+     
+      {/* onchange 이벤트는 input 요소에서 값이 변경될때 발생
+       그때 발생한 이벤트를 매개변수 e  */}
+       <div style={style2.addDataBox}>
+       이름 : <input style={style2.InputStyle} type="text" value={name} onChange={(e) => setName(e.target.value)} />
+       댓글 : <input style={style2.InputStyle} type="text" value={content} onChange={(e) => setContent(e.target.value)}/>
+      {/* <div style={{display : 'flex'}}>
+        <div>
+          이름 : <input type="text" onChange={(e)=> comments.name.target.value}/>
+        </div>
+        <div>
+          댓글 : <input type="text" onChange={(t)=> comments.comment.target.value}/>
+        </div>
+        <div>
+          <button onClick={addComment11}>글추가</button>
+        </div>
+      </div> */}
+      <button style={style2.addBtn} onClick={addComment}>글추가</button>
+      <button style={style2.addBtn} onClick={addComment11}>Comment +</button>
+      </div>
     </div>
-  );
+  )
 }
 
 export default CommentList;
