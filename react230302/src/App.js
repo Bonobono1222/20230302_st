@@ -44,12 +44,12 @@ function App() {
   return (
     <div className="App">
       <CommentList/>
-      <div style={style.backgroundImage}>
+      {/*<div style={style.backgroundImage}>
       </div>
       <img style={style.HamsterImage} src={process.env.PUBLIC_URL + './Hamster.jpg'} />
       <div style={{backgroundImage : 'url(https://cdn.pixabay.com/photo/2023/02/10/07/59/fox-7780326__340.jpg)', height : '300px'}}></div>
       <img src="https://cdn.pixabay.com/photo/2023/02/10/07/59/fox-7780326__340.jpg" alt="여우이미지"></img>
-      <img src={back} alt="햄스터"></img>
+  <img src={back} alt="햄스터"></img>*/}
       {/*import 해서 사용하려면 src폴더에 이미지파일이 있어야 한다. */}
     </div>
   );
